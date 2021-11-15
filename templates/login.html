@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 
     {% block header %}
-    <h1>{% block title %}Log In{% endblock %}</h1>
+            <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+            <script src="{{ url_for('static', filename='login.js') }}" ></script>
+        <h1>{% block title %}Log In{% endblock %}</h1>
     {% endblock %}
 
     {% block content %}
