@@ -1,0 +1,34 @@
+input[type=text], input[type=password] {
+    border-radius: 15px;
+    borer: 4px solid var(--block-color)
+}
+
+input[type=text]:focus {
+    background-color: var(--aux-bg-color);
+    border: 3px solid;
+}
+
+input[type=password]:focus {
+    background-color: var(--aux-bg-color);
+    border: 3px solid;
+}
+
+input[type=checkbox] {
+    border-radius: 50px;
+    background: var(--block-color);
+    color: var(--block-color);
+}
+
+input[type=submit] {
+    background-color: var(--block-color);
+    border-radius: 15px;
+    padding: 5px 7px;
+    border: none;
+    color: var(--aux-text-color);
+    font-size: 16px;
+}
+
+.content {
+    color: var(--main-text-color);
+    font-family: 'Ubuntu', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif
+}

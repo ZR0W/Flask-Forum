@@ -1,0 +1,25 @@
+:root {
+    --main-bg-color: #F1A208;
+    --aux-bg-color: #D5C67A;
+    --main-text-color: #052F5F;
+    --aux-text-color: #005377;
+    --block-color: #06A77D;
+
+}
+
+body {
+    background-color: var(--main-bg-color);
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: var(--aux-text-color);
+}
+
+.nav-bar {
+    background-color: var(--aux-bg-color);
+    color: var(--aux-text-color);
+    font-size: medium;
+    border-radius: 15px;
+}

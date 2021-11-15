@@ -1,16 +1,23 @@
-<div>
-        Home:
+<head>
+    <title>Flask Forum</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="nav-bar">
         <a href="{{ url_for('index') }}">Home</a>
         {% if current_user.is_anonymous %}
         <a href="{{ url_for('login') }}">Login</a>
         {% else %}
         <a href="{{ url_for('logout') }}">Logout</a>
         {% endif %}
-</div>
+    </div>
 
-<section class="content">
-        <header>
-                {% block header %}{% endblock %}
-        </header>
-        {% block content %}{% endblock %}
-</section>
+    <section class="content">
+            <header>
+                    {% block header %}{% endblock %}
+            </header>
+            {% block content %}{% endblock %}
+    </section>
+
+</body>
