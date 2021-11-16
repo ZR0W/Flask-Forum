@@ -3,3 +3,10 @@ Flask based online forum space project featuring user login, databases, authenti
 
 How to run: python3 main.py
 Problem fix: turn off browser caching so static files can update. 
+
+TO-DO:
+- Post function: HTML (T) + Backend (R)
+- React function: HTML (T) + Backend (R)
+- Ajax live update: (R)
+- Mail: Notification (T)
+- Feed display according to popularity (later)
