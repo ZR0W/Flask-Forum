@@ -5,7 +5,7 @@ How to run: python3 main.py
 Problem fix: turn off browser caching so static files can update. 
 
 TO-DO:
-- Post function: HTML (T) + Backend (R)
+- Post function: HTML (T) + Backend (R) --> discussion + comment (if u need help on this lmk)
 - React function: HTML (T) + Backend (R)
 - Ajax live update: (R)
 - Mail: Notification (T)
