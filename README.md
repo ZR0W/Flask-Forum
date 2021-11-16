@@ -10,3 +10,4 @@ TO-DO:
 - Ajax live update: (R)
 - Mail: Notification (T)
 - Feed display according to popularity (later)
+- Chat function (later)
