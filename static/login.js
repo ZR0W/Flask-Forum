@@ -3,7 +3,8 @@ $(document).ready(function() {
         let keycode = (event.keyCode ? event.keyCode : event.which);
           if(keycode == '13') {
             console.log('You pressed a "enter" key');
-            $('form[action|="/login"]')[0].submit();
+            // $('form[action|="/login"]')[0].submit();
+            $('form[name|="csrf_token"]')[0].submit();
           }
     })
 });

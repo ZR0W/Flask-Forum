@@ -1,17 +1,23 @@
 from flask import render_template, flash, redirect, url_for, request
 from flask_login import login_user, logout_user, current_user, login_required
 from werkzeug.urls import url_parse
-from forms import LoginForm, RegistrationForm
-from models import User, db, app
+from forms import LoginForm, RegistrationForm, ForumPostForm
+from models import User, Post, db, app
 
 @app.route('/')
-@app.route('/index')
+@app.route('/index', methods=['GET', 'POST'])
 @login_required
 def index():
-    posts = [
-    # add posts from db
-    ]
-    return render_template('index.html', title='Home', posts=posts)
+    posts = Post.query.all()
+
+    form = ForumPostForm()
+    if form.validate_on_submit():
+        post = Post(title=form.title.data, body=form.comment.data)
+        db.session.add(post)
+        db.session.commit()
+        flash('Succesfully posted!')
+        return redirect('index')
+    return render_template('index.html', title='Home', posts=posts, form=form)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():

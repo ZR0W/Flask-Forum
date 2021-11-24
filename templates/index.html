@@ -4,7 +4,29 @@
     <h1>Hi, {{ current_user.username }}!</h1>
     {% for post in posts %}
         <div>
-            <br>
+            <p>{{ post.title }}</p><br>
+            <p>{{ post.body }}</p><br>
         </div>
     {% endfor %}
+{% endblock %}
+
+{% block footer %}
+    <form method="post">
+            {{ form.hidden_tag() }}
+            <p>
+                {{ form.title.label }}<br>
+                {{ form.title(size=32) }}<br>
+                {% for error in form.title.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.comment.label }}<br>
+                {{ form.comment(size=32) }}<br>
+                {% for error in form.comment.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>{{ form.submit() }}</p>
+        </form>
 {% endblock %}
