@@ -1,29 +1,39 @@
 {% extends "base.html" %}
 
 {% block content %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <script src="{{ url_for('static', filename='index.js') }}" ></script>
     <h1>Hi, {{ current_user.username }}!</h1>
-    {% for post in posts %}
-        <div>
-            <p>{{ post.title }}</p><br>
-            <p>{{ post.body }}</p><br>
+    {% for post_form in posts %}
+        <div class="post-container">
+            <div class="post">
+                <p class="body">{{ post_form.body }}</p>
+                <span>{{ post_form.id }}</span>
+            </div>
+            <div class="comment">
+                <form action="" method="post" class="comment-form">
+                {{ form.hidden_tag() }}
+                <p>
+                    {{ comment_form.comment.label }}<br>
+                    {{ comment_form.comment(size=32) }}<br>
+                    {% for error in comment_form.comment.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                <p>{{ comment_form.submit() }}</p>
+            </form>
+            </div>
         </div>
     {% endfor %}
 {% endblock %}
 
 {% block footer %}
-    <form method="post">
+    <form action="" method="post" class="post-form">
             {{ form.hidden_tag() }}
             <p>
-                {{ form.title.label }}<br>
-                {{ form.title(size=32) }}<br>
-                {% for error in form.title.errors %}
-                <span style="color: red;">[{{ error }}]</span>
-                {% endfor %}
-            </p>
-            <p>
-                {{ form.comment.label }}<br>
-                {{ form.comment(size=32) }}<br>
-                {% for error in form.comment.errors %}
+                {{ form.post.label }}<br>
+                {{ form.post(size=32) }}<br>
+                {% for error in form.post.errors %}
                 <span style="color: red;">[{{ error }}]</span>
                 {% endfor %}
             </p>

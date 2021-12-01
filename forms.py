@@ -31,7 +31,10 @@ class RegistrationForm(FlaskForm):
 
 
 class ForumPostForm(FlaskForm):
-    title = StringField('Title', validators=[DataRequired()])
-    comment = StringField('Comments', validators=[DataRequired()])
-
+    post = StringField('Post', validators=[DataRequired()])
     submit = SubmitField('Post')
+
+
+class CommentForm(FlaskForm):
+    comment = StringField('Comments', validators=[DataRequired()])
+    submit = SubmitField('Comment')

@@ -1,0 +1,26 @@
+h1 {
+    text-align: center;
+    font-size: larger;
+    font-family: 'Ubuntu', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif;
+    color: var(--main-text-color)
+}
+
+div.post {
+    background-color: var(--aux-bg-color);
+    border-radius: 15px;
+}
+
+div.post p.title {
+    color: var(--main-text-color);
+    font-size: medium;
+}
+
+div.post p.body {
+    color: var(--aux-text-color);
+    font-size: medium;
+}
+
+div {
+    border: solid #06A77D 3px;
+    margin: 5px;
+}
