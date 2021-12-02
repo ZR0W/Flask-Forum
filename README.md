@@ -4,11 +4,16 @@ Flask based online forum space project featuring user login, databases, authenti
 How to run: python3 main.py
 Problem fix: turn off browser caching so static files can update. 
 
+SLIDES:
+introduction to project + motivation
+features
+tech-stack
+what we have so far: log in, register, post, comment, react
+challenges
+next steps/extra features: mail + restful (delete, edit, add)
+
 TO-DO:
-- Post function: HTML (T) + Backend (R) --> discussion + comment (if u need help on this lmk)
-- React function: HTML (T) + Backend (R)
-- Ajax live update: (R)
-- Mail: Notification (T)
-- Feed display according to popularity (later)
-- Chat function (later)
-- Presentation slides (later)
+- Post/Comment
+- React
+- Mail
+- RESTful
