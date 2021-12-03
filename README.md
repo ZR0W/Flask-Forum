@@ -16,5 +16,5 @@ SLIDES:
 TO-DO:
 - Post/Comment
 - React
-- Mail
 - RESTful
+- Search user's post
