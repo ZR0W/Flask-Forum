@@ -1,3 +1,4 @@
+
 {% extends "base.html" %}
 
 {% block content %}
@@ -45,7 +46,12 @@
                     </span>
                 </p>
                 <p class="title">{{ post.title }}</p>
-                <p class="body">{{ post.body }}</p>
+                <p class="body">
+                    {% for line in post.body.splitlines() %}
+                        {{ line }}
+                        <br />
+                    {% endfor %}
+                </p>
             </div>
             <div class="react">
                 <a href="upvote/{{post.id}}" class="btn btn-primary">
@@ -80,7 +86,12 @@
                                 {% endif %}
                             </span>
                         </p>
-                        <p class="body">{{ comment.body }}</p>
+                        <p class="body">
+                            {% for line in comment.body.splitlines() %}
+                                {{ line }}
+                                <br />
+                            {% endfor %}
+                        </p>
                         <div class="react">
                             <a href="comment/upvote/{{comment.id}}">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
