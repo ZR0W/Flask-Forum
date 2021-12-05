@@ -1,0 +1,88 @@
+h1 {
+    text-align: center;
+    font-size: x-large;
+    color: var(--main-text-color)
+}
+
+div.post {
+    border-radius: 15px;
+}
+
+div.comment {
+    background-color: #faebd7;
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+p.user {
+    color: var(--main-text-color);
+    font-size: larger;
+    font-weight: bold;
+    margin-bottom: 1px;
+}
+
+div.post p.title {
+    color: var(--main-text-color);
+    font-size: large;
+    font-weight: bold;
+}
+
+p.body {
+    color: var(--aux-text-color);
+    font-size: medium;
+}
+
+div.post-container {
+    border: solid #D9C9BA 2px;
+    background-color: #fff8e7;
+    margin: auto;
+    margin-bottom: 10px;
+    width: 65%;
+    text-align: left;
+    padding: 15px;
+}
+
+div.user-post {
+    border: solid #D9C9BA 2px;
+    background-color: #fff8e7;
+    margin: auto;
+    margin-bottom: 15px;
+    width: 65%;
+    text-align: left;
+    padding: 15px;
+}
+
+div.react {
+    /* border: solid #F2E5D5 1px; */
+    border-radius: 5px;
+    /* background-color: #D5B895; */
+    padding: 5px;
+    padding-left: 5px;
+}
+
+a:hover {
+    background-color: var(--font-color);
+    color: saddlebrown;
+}
+
+form textarea#title {
+    width: 96%;
+    height: 3%;
+}
+
+form textarea#body {
+    width: 97%;
+    height: 10%;
+}
+
+form #submit {
+    background-color: #C19770;
+    height: 40px;
+    width: 70px;
+    font-size: medium;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 3px 4px #888888;
+    color: #595045;
+}
