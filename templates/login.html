@@ -1,12 +1,19 @@
 {% extends 'base.html' %}
 
     {% block header %}
-            <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
-            <script src="{{ url_for('static', filename='login.js') }}" ></script>
+        <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+        <script src="{{ url_for('static', filename='login.js') }}" ></script>
         <h1>{% block title %}Log In{% endblock %}</h1>
     {% endblock %}
 
     {% block content %}
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+            <span class="flash">{{ message }}</span>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
         <form action="/login" method="post">
             {{ form.hidden_tag() }}
             <p>
@@ -26,6 +33,6 @@
             <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
             <p>{{ form.submit() }}</p>
         </form>
-        <p style="font-size: small;">Is this your first time with us? <a href="{{ url_for('register') }}">Register here</a></p>
+        <p style="font-size: small;">Is this your first time with us? <a class="register" href="{{ url_for('register') }}">Register here!</a></p>
     {% endblock %}
     

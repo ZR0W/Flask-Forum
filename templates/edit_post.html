@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block header %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='edit.css') }}">
+    <h1>{% block title %}Edit Your Post{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<div class="edit">
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.title.label }}<br><br>
+            {{ form.title(size=32) }}<br>
+            {% for error in form.title.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.body.label }}<br><br>
+            {{ form.body(size=64) }}<br>
+            {% for error in form.body.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+</div>
+{% endblock %}
