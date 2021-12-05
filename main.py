@@ -36,9 +36,12 @@ def index():
         post = Post(title=post_form.title.data, body=post_form.body.data, user_id=current_user.get_id())
         db.session.add(post)
         db.session.commit()
-        msg = Message("New Post Created!", sender = email_addr, recipients = [email_addr, all_users[int(current_user.get_id())][1]])
-        msg.body = "Hi " + all_users[int(current_user.get_id())][0] + "!\n\nA new discussion thread has been created by YOU! Stay tuned!\n\n - FF"
-        mail.send(msg)
+        try: 
+            msg = Message("New Post Created!", sender = email_addr, recipients = [email_addr, all_users[int(current_user.get_id())][1]])
+            msg.body = "Hi " + all_users[int(current_user.get_id())][0] + "!\n\nA new discussion thread has been created by YOU! Stay tuned!\n\n - FF"
+            mail.send(msg)
+        except:
+            print("Unable to send email")
         return redirect(url_for('index', _anchor="end"))
     return render_template('index.html', title='Home', posts=all_posts, users=all_users, query=query,
                         comments=all_comments, form=post_form, comment_form=comment_form)
@@ -169,9 +172,12 @@ def register():
         db.session.add(user)
         db.session.commit()
         flash('Successfully registered!')
-        msg = Message("Welcome to Flask Forum!", sender = email_addr, recipients = [email_addr, form.email.data])
-        msg.body = "Hi " + form.username.data + "!\n\nThank you for registering! Hope you enjoy the ride :)\n\n- FF"
-        mail.send(msg)
+        try:
+            msg = Message("Welcome to Flask Forum!", sender = email_addr, recipients = [email_addr, form.email.data])
+            msg.body = "Hi " + form.username.data + "!\n\nThank you for registering! Hope you enjoy the ride :)\n\n- FF"
+            mail.send(msg)
+        except:
+            print("Unable to send email")
         return redirect(url_for('index'))
     return render_template('register.html', title='Register', form=form)
 
