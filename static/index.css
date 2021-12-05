@@ -63,7 +63,7 @@ div.react {
 
 a:hover {
     background-color: var(--font-color);
-    color: white;
+    color: saddlebrown;
 }
 
 form textarea#title {
