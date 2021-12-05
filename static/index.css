@@ -64,6 +64,7 @@ div.react {
 a:hover {
     background-color: var(--font-color);
     color: saddlebrown;
+    cursor: pointer;
 }
 
 form textarea#title {
@@ -85,4 +86,5 @@ form #submit {
     border-radius: 5px;
     box-shadow: 3px 4px #888888;
     color: #595045;
+    cursor: pointer;
 }

@@ -36,6 +36,7 @@ form #submit {
     font-weight: bold;
     border-radius: 5px;
     box-shadow: 3px 4px #888888;
+    cursor: pointer;
 }
 
 a {
