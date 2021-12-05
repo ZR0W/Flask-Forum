@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField
+from wtforms import StringField, TextAreaField, PasswordField, BooleanField, SubmitField
 from wtforms.validators import ValidationError, DataRequired, Email, EqualTo
 from models import User
 
@@ -31,10 +31,11 @@ class RegistrationForm(FlaskForm):
 
 
 class ForumPostForm(FlaskForm):
-    post = StringField('Post', validators=[DataRequired()])
+    title = TextAreaField('Title', validators=[DataRequired()], render_kw={"placeholder": "What are you thinking?"})
+    body = TextAreaField('Body', validators=[DataRequired()], render_kw={"placeholder": "Create post..."})
     submit = SubmitField('Post')
 
 
 class CommentForm(FlaskForm):
-    comment = StringField('Comments', validators=[DataRequired()])
-    submit = SubmitField('Comment')
+    body = TextAreaField('Comment', validators=[DataRequired()], render_kw={"placeholder": "Type your reply here..."})
+    submit = SubmitField('Reply')

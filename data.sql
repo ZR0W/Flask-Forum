@@ -10,8 +10,8 @@ CREATE TABLE post (
 	body VARCHAR(250)  NOT NULL,
 	title VARCHAR(80)  NOT NULL,
 	timestamp datetime  NOT NULL,
-	upvote INTEGER DEFAULT 0 NOT NULL, 
-	downvote INTEGER DEFAULT 0 NOT NULL, 
+	upvotes INTEGER DEFAULT 0 NOT NULL, 
+	downvotes INTEGER DEFAULT 0 NOT NULL, 
 	user_id INTEGER REFERENCES user (id),
 	PRIMARY KEY (id)
 ); 
@@ -19,10 +19,11 @@ CREATE TABLE comment (
 	id INTEGER  NOT NULL, 
 	body VARCHAR(250)  NOT NULL,
 	timestamp datetime  NOT NULL,
-	upvote INTEGER DEFAULT 0 NOT NULL, 
-	downvote INTEGER DEFAULT 0 NOT NULL, 
+	upvotes INTEGER DEFAULT 0 NOT NULL, 
+	downvotes INTEGER DEFAULT 0 NOT NULL, 
 	post_id INTEGER REFERENCES post (id),
-	PRIMARY KEY (id, post_id)
+	user_id INTEGER REFERENCES user (id),
+	PRIMARY KEY (id)
 ); 
 CREATE TABLE message ( 
 	body VARCHAR(250)  NOT NULL,

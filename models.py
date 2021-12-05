@@ -24,9 +24,10 @@ class User(UserMixin, db.Model):
     email = db.Column(db.String(120), index=True, unique=True)
     password = db.Column(db.String(128))
     posts = db.relationship('Post', backref='author', lazy='dynamic')
+    comments = db.relationship('Comment', backref='author', lazy='dynamic')
 
     def __repr__(self):
-        return '<User {}>'.format(self.username)
+        return '{}'.format(self.id)
 
     def set_password(self, password):
         self.password = generate_password_hash(password)
@@ -43,23 +44,24 @@ class Post(db.Model):
     body = db.Column(db.String(250))
     title = db.Column(db.String(80))
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
-    upvote = db.Column(db.Integer, default=0)
-    downvote = db.Column(db.Integer, default=0)
+    upvotes = db.Column(db.Integer, default=0)
+    downvotes = db.Column(db.Integer, default=0)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
     def __repr__(self):
-        return '<Post {}>'.format(self.body)
+        return '{}/{}/{}/{}/{}/{}/{}'.format(self.id, self.title, self.body, self.timestamp, self.upvotes, self.downvotes, self.user_id)
 
 class Comment(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     body = db.Column(db.String(250))
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
-    upvote = db.Column(db.Integer, default=0)
-    downvote = db.Column(db.Integer, default=0)
-    post_id = db.Column(db.Integer, db.ForeignKey('post.id'), primary_key=True)
+    upvotes = db.Column(db.Integer, default=0)
+    downvotes = db.Column(db.Integer, default=0)
+    post_id = db.Column(db.Integer, db.ForeignKey('post.id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
     def __repr__(self):
-        return '<Comment {}>'.format(self.body)
+        return '<Comment {} from Post {}>'.format(self.id, self.post_id)
 
 class Message(db.Model):
     body = db.Column(db.String(250))
@@ -68,4 +70,4 @@ class Message(db.Model):
     user_id2 = db.Column(db.Integer, db.ForeignKey('user.id'), primary_key=True)
 
     def __repr__(self):
-        return '<Message {}>'.format(self.body)
+        return '<Message {}>'.format(self.id)
