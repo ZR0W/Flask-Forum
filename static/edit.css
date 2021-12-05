@@ -1,0 +1,36 @@
+h1 {
+    text-align: center;
+    font-size: x-large;
+    color: var(--main-text-color)
+}
+
+form textarea#title {
+    width: 97%;
+    height: 3%;
+}
+
+form textarea#body {
+    width: 97%;
+    height: 10%;
+}
+
+div.edit {
+    border: solid #D9C9BA 2px;
+    background-color: #fff8e7;
+    margin: auto;
+    margin-bottom: 10px;
+    width: 65%;
+    text-align: left;
+    padding: 15px;
+}
+
+form #submit {
+    background-color: #C19770;
+    height: 40px;
+    width: 70px;
+    font-size: medium;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 3px 4px #888888;
+    color: #595045;
+}

@@ -1,6 +1,6 @@
 input[type=text], input[type=password] {
     border-radius: 15px;
-    borer: 4px solid var(--block-color)
+    border: 2px solid var(--block-color)
 }
 
 input[type=text]:focus {
@@ -31,4 +31,15 @@ input[type=submit] {
 .content {
     color: var(--main-text-color);
     font-family: 'Ubuntu', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif
+}
+
+.flash {
+    font-size: medium;
+    color: saddlebrown;
+    font-weight: bold;
+}
+
+.register {
+    color: saddlebrown;
+    font-weight: bold;
 }
