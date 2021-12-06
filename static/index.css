@@ -54,9 +54,7 @@ div.user-post {
 }
 
 div.react {
-    /* border: solid #F2E5D5 1px; */
     border-radius: 5px;
-    /* background-color: #D5B895; */
     padding: 5px;
     padding-left: 5px;
 }
@@ -77,7 +75,7 @@ form textarea#body {
     height: 10%;
 }
 
-form #submit {
+input[type=submit] {
     background-color: #C19770;
     height: 40px;
     width: 70px;

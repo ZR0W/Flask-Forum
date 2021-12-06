@@ -26,23 +26,25 @@ a {
     color: var(--aux-text-color);
     font-size: large;
     border-radius: 10px;
-    padding: 8px;
-}
-
-form #submit {
-    background-color: #C19770;
-    height: 40px;
-    width: 75px;
-    font-weight: bold;
-    border-radius: 5px;
-    box-shadow: 3px 4px #888888;
-    cursor: pointer;
+    padding-top: 6px;
 }
 
 a {
     margin-right:15px;
 }
 
-#search {
+input[type=submit] {
+    font-family: 'Ubuntu', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif;
+    background-color: #C19770;
+    height: 40px;
+    width: 75px;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 3px 4px #888888;
+    color: #595045;
+    cursor: pointer;
+}
+
+input[type=text] {
     font-family: 'Ubuntu', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif;
 }
