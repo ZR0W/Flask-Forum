@@ -9,8 +9,6 @@ Done:
 - Post, comment, react
 - Mail noti
 - RESTful: add, edit, delete
-
-TO-DO:
 - Search bar
 
 Slides:
