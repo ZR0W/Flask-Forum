@@ -145,7 +145,6 @@ def search():
         return render_template('notfound.html', title='Result')
     else:
         posts = db.session.query(Post).filter(Post.user_id == user.id).all()
-        print(posts)
         all_comments = Comment.query.all()
         comment_form = CommentForm()
     return render_template('search.html', title='Result', posts=posts, comments=all_comments, comment_form=comment_form, user=user)
