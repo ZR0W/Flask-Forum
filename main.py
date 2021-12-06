@@ -26,7 +26,6 @@ def get_user():
 @app.route('/index', methods=['GET', 'POST'])
 @login_required
 def index():
-    query = User.query
     all_posts = Post.query.all()
     all_users = get_user()
     all_comments = Comment.query.all()
@@ -43,7 +42,7 @@ def index():
         except:
             print("Unable to send email")
         return redirect(url_for('index', _anchor="end"))
-    return render_template('index.html', title='Home', posts=all_posts, users=all_users, query=query,
+    return render_template('index.html', title='Home', posts=all_posts, users=all_users,
                         comments=all_comments, form=post_form, comment_form=comment_form)
 
 
@@ -135,6 +134,21 @@ def delete_cmt(post_id, comment_id):
     db.session.query(Comment).filter(Comment.id == comment_id).delete()
     db.session.commit()
     return redirect(url_for('index', _anchor="post_"+post_id))
+
+
+@app.route('/search', methods=['GET', 'POST'])
+@login_required
+def search():
+    username = request.form['search_form']
+    user = db.session.query(User).filter(User.username == username).first()
+    if(user == None):
+        return render_template('notfound.html', title='Result')
+    else:
+        posts = db.session.query(Post).filter(Post.user_id == user.id).all()
+        print(posts)
+        all_comments = Comment.query.all()
+        comment_form = CommentForm()
+    return render_template('search.html', title='Result', posts=posts, comments=all_comments, comment_form=comment_form, user=user)
 
 
 @app.route('/login', methods=['GET', 'POST'])
