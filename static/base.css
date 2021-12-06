@@ -46,5 +46,11 @@ input[type=submit] {
 }
 
 input[type=text] {
+    border-radius: 15px;
+    border: 2px solid var(--block-color);
     font-family: 'Ubuntu', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif;
+}
+
+input[type=text]:focus {
+    border: 3px solid;
 }

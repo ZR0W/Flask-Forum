@@ -4,12 +4,10 @@ input[type=text], input[type=password] {
 }
 
 input[type=text]:focus {
-    background-color: var(--aux-bg-color);
     border: 3px solid;
 }
 
 input[type=password]:focus {
-    background-color: var(--aux-bg-color);
     border: 3px solid;
 }
 
