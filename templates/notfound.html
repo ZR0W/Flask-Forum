@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block header %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <h1>{% block title %}404{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<div class="search">
+    <p>Oops! You are searching for an unknown user x_x</p>
+</div>
+{% endblock %}
